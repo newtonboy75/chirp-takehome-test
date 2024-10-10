@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import useCompanyDetails from "../hooks/useCompanyDetails";
 import Image from "next/image";
-
-interface CompanyDetailsProps {
-  entityId: string;
-}
+import { CompanyDetailsProps } from "../types/company";
 
 const CompanyDetails = ({ entityId }: CompanyDetailsProps) => {
   const { data, loading, error, fetchCompanyDetails } = useCompanyDetails();

@@ -44,3 +44,7 @@ export interface AutocompleteItem {
 export interface AutocompleteResponse {
   entities: AutocompleteItem[];
 }
+
+interface CompanyDetailsProps {
+    entityId: string;
+  }
