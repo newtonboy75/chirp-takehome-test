@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import axios from "axios";
 
-export async function GET(request: Request, response: Response) {
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const entity_id = searchParams.get("entity_id");
   const fieldIds = searchParams.get("fieldIds");
@@ -31,8 +31,9 @@ export async function GET(request: Request, response: Response) {
 
     return NextResponse.json(response.data);
   } catch (error) {
+    console.error('Error fetching data:', error);
     return NextResponse.json(
-      { error: "Failed to fetch data" },
+      { error: error},
       { status: 500 }
     );
   }

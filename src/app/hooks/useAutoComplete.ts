@@ -18,7 +18,7 @@ const useAutocomplete = () => {
           params: { query }, // Use your proxy route
         }
       );
-      console.log(response.data);
+      //console.log(response.data);
 
       setData(response.data); // Set the fetched data
     } catch (err) {

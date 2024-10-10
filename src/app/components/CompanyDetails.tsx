@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import useCompanyDetails from "../hooks/useCompanyDetails";
+import Image from "next/image";
 
 interface CompanyDetailsProps {
   entityId: string;
@@ -18,8 +19,8 @@ const CompanyDetails = ({ entityId }: CompanyDetailsProps) => {
     if (entityId) {
       fetchDetails();
     }
-    console.log("data all here");
-    console.log(data);
+    
+    //console.log(data);
   }, [entityId]); //re-render when entity id changes
 
   return (
@@ -32,10 +33,11 @@ const CompanyDetails = ({ entityId }: CompanyDetailsProps) => {
             <div className="flex flex-col md:flex-row gap-8">
               {/* Image Column */}
               <div className="md:w-1/4 flex flex-col items-center">
-                <img
+                <Image
                   src={data.properties.image_url}
                   alt={data.properties.name}
-                  className="w-full h-auto max-w-sm"
+                  width={300}
+                  height={300}
                 />
               </div>
 
